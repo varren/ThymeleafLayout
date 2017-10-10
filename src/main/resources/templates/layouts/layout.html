@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="page(title)">
+<head th:replace="fragments/head :: common_header(title=${title}, links=~{::link})">
+    <!-- title is a string  passed from the index.html page as a string -->
+    <!-- links come from the list of link tags defined here like this -->
+    <link th:href="@{/css/layout.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/layout2.css}" rel="stylesheet" type="text/css" />
+
+    <!--use h:include="layouts/layout :: page(title=${indexTitle},links=~{})"
+        if you don't want any links
+        more info here: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#flexible-layouts-beyond-mere-fragment-insertion-->
+</head>
+<body>
+<div th:replace="~{fragments/navigation :: nav}"></div>
+
+<div id="wrap">
+    <div class="block">Part of layouts/layout.html</div>
+    <div th:replace="this :: content"></div>
+</div>
+</div>
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>

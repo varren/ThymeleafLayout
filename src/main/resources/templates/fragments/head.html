@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="common_header(title,links)">
+    <title th:text="${title}">The awesome application</title>
+
+    <!-- Common styles and scripts -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css" />
+
+    <!--/* Per-page placeholder for additional links    */-->
+    <th:block th:replace="${links}" />
+
+
+</head>
+<body>
+
+</body>
+</html>
